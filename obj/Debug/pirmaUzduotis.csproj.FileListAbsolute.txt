@@ -1,0 +1,10 @@
+C:\Users\0111010001101111\Desktop\Paskaitos\Daugegijis programavimas\Uzduotys\pirmaUzduotis\pirmaUzduotis\bin\Debug\pirmaUzduotis.exe.config
+C:\Users\0111010001101111\Desktop\Paskaitos\Daugegijis programavimas\Uzduotys\pirmaUzduotis\pirmaUzduotis\bin\Debug\pirmaUzduotis.exe
+C:\Users\0111010001101111\Desktop\Paskaitos\Daugegijis programavimas\Uzduotys\pirmaUzduotis\pirmaUzduotis\bin\Debug\pirmaUzduotis.pdb
+C:\Users\0111010001101111\Desktop\Paskaitos\Daugegijis programavimas\Uzduotys\pirmaUzduotis\pirmaUzduotis\obj\Debug\pirmaUzduotis.csprojResolveAssemblyReference.cache
+C:\Users\0111010001101111\Desktop\Paskaitos\Daugegijis programavimas\Uzduotys\pirmaUzduotis\pirmaUzduotis\obj\Debug\pirmaUzduotis.Form1.resources
+C:\Users\0111010001101111\Desktop\Paskaitos\Daugegijis programavimas\Uzduotys\pirmaUzduotis\pirmaUzduotis\obj\Debug\pirmaUzduotis.Properties.Resources.resources
+C:\Users\0111010001101111\Desktop\Paskaitos\Daugegijis programavimas\Uzduotys\pirmaUzduotis\pirmaUzduotis\obj\Debug\pirmaUzduotis.csproj.GenerateResource.Cache
+C:\Users\0111010001101111\Desktop\Paskaitos\Daugegijis programavimas\Uzduotys\pirmaUzduotis\pirmaUzduotis\obj\Debug\pirmaUzduotis.csproj.CoreCompileInputs.cache
+C:\Users\0111010001101111\Desktop\Paskaitos\Daugegijis programavimas\Uzduotys\pirmaUzduotis\pirmaUzduotis\obj\Debug\pirmaUzduotis.exe
+C:\Users\0111010001101111\Desktop\Paskaitos\Daugegijis programavimas\Uzduotys\pirmaUzduotis\pirmaUzduotis\obj\Debug\pirmaUzduotis.pdb
