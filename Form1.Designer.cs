@@ -77,10 +77,15 @@
             this.start_button.UseVisualStyleBackColor = false;
             this.start_button.Click += new System.EventHandler(this.start_button_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.tick);
+            // 
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
-            this.timeLabel.Location = new System.Drawing.Point(16, 175);
+            this.timeLabel.Location = new System.Drawing.Point(348, 87);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(80, 13);
             this.timeLabel.TabIndex = 4;

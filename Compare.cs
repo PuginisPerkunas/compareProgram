@@ -14,6 +14,7 @@ namespace pirmaUzduotis
         public static int DUPLICATES_FOUND = 0;
         public string SEARCH_ENTRY_POINT;
         const int BYTES_TO_READ = sizeof(Int64);
+        public static List<string> filesList = new List<string>();
 
         //constructor
         public Compare(String SEARCH_ENTRY_POINT)
@@ -47,9 +48,9 @@ namespace pirmaUzduotis
             }
         }
 
-        //This method is used to iterate through all the files and compare them against provided file. 
         private void RecursiveComparisonIteration(string path, FileInfo mainFile)
         {
+            bool nuskaitytas;
             string[] files = Directory.GetFiles(path);
 
             foreach (string file in files)
@@ -59,11 +60,30 @@ namespace pirmaUzduotis
 
                 if (mainFile.FullName != comparedFile.FullName)
                 {
-                    if (FilesAreEqual(mainFile, comparedFile))
+                    nuskaitytas = false;
+
+                    if (filesList.Any())
                     {
-                        DUPLICATES_FOUND++;
-                        firstFile = mainFile.FullName;
-                        secondFile = comparedFile.FullName;
+                        foreach(string k in filesList)
+                        {
+                            if(mainFile.FullName == k || comparedFile.FullName == k)
+                            {
+                                nuskaitytas = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if(nuskaitytas == false)
+                    {
+                        if (FilesAreEqual(mainFile, comparedFile))
+                        {
+
+                            firstFile = mainFile.FullName;
+                            secondFile = comparedFile.FullName;
+                            filesList.Add(firstFile);
+                            filesList.Add(secondFile);
+                        }
                     }
                 }
             }
@@ -79,7 +99,6 @@ namespace pirmaUzduotis
         {
             if (first.Length != second.Length)
             {
-
                 return false;
             }
             int iterations = (int)Math.Ceiling((double)first.Length / BYTES_TO_READ);
@@ -105,14 +124,14 @@ namespace pirmaUzduotis
             return true;
         }
 
-        public String getFirstString()
-        {
-            return firstFile;
-        }
-        public String getSecondString()
-        {
-            return secondFile;
-        }
+        //public String getFirstString()
+        //{
+        //    return firstFile;
+        //}
+        //public String getSecondString()
+        //{
+        //    return secondFile;
+        //}
 
 
     }//class

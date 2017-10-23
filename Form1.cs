@@ -42,19 +42,28 @@ namespace pirmaUzduotis
         {
             Compare compare = new Compare(folderPath);
             compare.Start();
-            SetText("Failas esantis: " + compare.getFirstString());
-            SetText("Yra identiskas: " + compare.getSecondString());
+            //SetText("Failas esantis: " + compare.getFirstString());
+            //SetText("Yra identiskas: " + compare.getSecondString());
+            //SetText("Uztrukta: " + timerValue + " senkundes");
+            int i = 1;
+            foreach(string k in Compare.filesList)
+            {
+                if(i%2 == 1)
+                {
+                    SetText("Failas esantis " + k + "\r\n");
+                }
+                else
+                {
+                    SetText("Yra dublikatas: " + k + "\r\n\r\n");
+                }
+                i++;
+            }
             timer1.Stop();
             
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            timerValue++;
-            timeLabel.Text = "Time spended: " + timerValue.ToString();
-        }
-
         delegate void SetTextCallback(string text);
+
         private void SetText(string text)
         {
             if (this.listView.InvokeRequired)
@@ -67,6 +76,11 @@ namespace pirmaUzduotis
                 this.listView.Items.Add(text);
             }
         }
-        
+
+        private void tick(object sender, EventArgs e)
+        {
+            timerValue++;
+            timeLabel.Text = "Time spended: " + timerValue.ToString();
+        }
     }//class
 }//namespace
