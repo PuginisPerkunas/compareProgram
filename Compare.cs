@@ -16,7 +16,6 @@ namespace pirmaUzduotis
         const int BYTES_TO_READ = sizeof(Int64);
         public static List<string> filesList = new List<string>();
 
-        //constructor
         public Compare(String SEARCH_ENTRY_POINT)
         {
             this.SEARCH_ENTRY_POINT = SEARCH_ENTRY_POINT;
@@ -24,14 +23,11 @@ namespace pirmaUzduotis
 
         public void Start()
         {
-            //Recursively iterate through directories 
-            //on every file iterate through directories again
-            //compare every file now, if two files are equal respond to 
             Console.WriteLine("Started");
             ProcessDirectory(SEARCH_ENTRY_POINT);
             Console.WriteLine("finish");
         }
-        //This method is used to iterate through all the files. 
+
         private void ProcessDirectory(String path)
         {
             string[] files = Directory.GetFiles(path);
@@ -57,7 +53,6 @@ namespace pirmaUzduotis
             {
                 FileInfo comparedFile = new FileInfo(file);
 
-
                 if (mainFile.FullName != comparedFile.FullName)
                 {
                     nuskaitytas = false;
@@ -73,12 +68,10 @@ namespace pirmaUzduotis
                             }
                         }
                     }
-
                     if(nuskaitytas == false)
                     {
                         if (FilesAreEqual(mainFile, comparedFile))
                         {
-
                             firstFile = mainFile.FullName;
                             secondFile = comparedFile.FullName;
                             filesList.Add(firstFile);
@@ -87,14 +80,12 @@ namespace pirmaUzduotis
                     }
                 }
             }
-
             string[] subdirectoryEntries = Directory.GetDirectories(path);
             foreach (string subdirectory in subdirectoryEntries)
             {
                 RecursiveComparisonIteration(subdirectory, mainFile);
             }
         }
-
         static bool FilesAreEqual(FileInfo first, FileInfo second)
         {
             if (first.Length != second.Length)
@@ -123,16 +114,5 @@ namespace pirmaUzduotis
 
             return true;
         }
-
-        //public String getFirstString()
-        //{
-        //    return firstFile;
-        //}
-        //public String getSecondString()
-        //{
-        //    return secondFile;
-        //}
-
-
     }//class
 }//namespace

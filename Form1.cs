@@ -15,6 +15,7 @@ namespace pirmaUzduotis
     {
         private string folderPath = "";
         private int timerValue;
+        delegate void SetTextCallback(string text);
         public Form1()
         {
             InitializeComponent();
@@ -35,16 +36,12 @@ namespace pirmaUzduotis
             Thread worker = new Thread(ComparerFunction);
             timer1.Start();
             worker.Start();
-
         }
 
         public void ComparerFunction()
         {
             Compare compare = new Compare(folderPath);
             compare.Start();
-            //SetText("Failas esantis: " + compare.getFirstString());
-            //SetText("Yra identiskas: " + compare.getSecondString());
-            //SetText("Uztrukta: " + timerValue + " senkundes");
             int i = 1;
             foreach(string k in Compare.filesList)
             {
@@ -59,11 +56,7 @@ namespace pirmaUzduotis
                 i++;
             }
             timer1.Stop();
-            
         }
-
-        delegate void SetTextCallback(string text);
-
         private void SetText(string text)
         {
             if (this.listView.InvokeRequired)
